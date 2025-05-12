@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Invitation Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- html2canvas for PNG download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- jsPDF for PDF download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+
+    <h1 class="text-3xl font-bold mb-6">🎉 Create Your Event Invitation</h1>
+
+    <div class="w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Form -->
+      <div>
+        <label class="block mb-2 font-semibold">Event Title</label>
+        <input id="title" class="w-full p-2 border rounded mb-4" placeholder="e.g., John's Birthday" />
+
+        <label class="block mb-2 font-semibold">Date</label>
+        <input id="date" type="date" class="w-full p-2 border rounded mb-4" />
+
+        <label class="block mb-2 font-semibold">Location</label>
+        <input id="location" class="w-full p-2 border rounded mb-4" placeholder="e.g., Central Park" />
+
+        <label class="block mb-2 font-semibold">Theme</label>
+        <select id="theme" class="w-full p-2 border rounded mb-4">
+          <option value="pink">Pink</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+
+        <div class="flex space-x-2">
+          <button id="downloadPNG" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            Download PNG
+          </button>
+
+          <button id="downloadPDF" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+            Download PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div id="invitation" class="p-6 rounded-2xl text-center border-4 border-pink-300 bg-pink-100 transition-all duration-300 w-full h-full">
+        <h2 id="previewTitle" class="text-2xl font-bold mb-2">Your Event Title</h2>
+        <p id="previewDate" class="mb-1">Date: YYYY-MM-DD</p>
+        <p id="previewLocation" class="mb-4">Location: Venue</p>
+        <p class="italic">You're Invited!</p>
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
